@@ -1,0 +1,7 @@
+.list-item.setting
+  = setting.name
+  %br
+  = setting.value
+  .edit
+  .actions
+    = link_to 'edit', edit_setting_path(setting), class: 'edit-link', remote: 'true'

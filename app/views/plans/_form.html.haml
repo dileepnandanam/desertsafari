@@ -1,0 +1,5 @@
+= simple_form_for([@catagory, @plan], remote: true) do |f|
+  = f.input :name
+  = f.input :price
+  = f.submit 'submit'
+  = link_to 'cancel', '#', class: 'cancel-link', remote: true

@@ -1,0 +1,14 @@
+.admin-space
+  %h3
+    Tour Catagories
+  .list.tour-catagories
+    - @catagories.each do |c|
+      = render partial: 'catagory', locals: {catagory: c}
+  .new
+  = link_to 'new catagory', new_catagory_path, class: 'new-link', remote: true
+
+  %h3
+    Site Settings
+  .list.site-settings
+    - @settings.each do |s|
+      = render partial: 'settings/setting', locals: {setting: s}

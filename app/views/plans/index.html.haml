@@ -1,0 +1,8 @@
+.admin-space
+  %h3
+    = @catagory.name
+  .list.tour-catagories
+    - @plans.each do |p|
+      = render partial: 'plan', locals: {plan: p}
+  .new
+  = link_to 'new plan', new_catagory_plan_path, class: 'new-link', remote: true

@@ -1,0 +1,11 @@
+.list-item
+  name:
+  = link_to catagory.name, catagory_plans_path(catagory)
+  %br
+  description:
+  = catagory.description
+  %br
+  .actions
+    = link_to 'edit', edit_catagory_path(catagory), class: 'edit-link', remote: true
+    = link_to 'delete', catagory_path(catagory), class: 'delete-link', method: 'delete', remote: true
+  .edit

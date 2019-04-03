@@ -1,0 +1,4 @@
+= simple_form_for(@setting, remote: true) do |f|
+  = f.input :value, label: f.object.name
+  = f.submit 'submit'
+  = link_to 'cancel', '#', class: 'cancel-link', remote: true

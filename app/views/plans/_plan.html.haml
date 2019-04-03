@@ -1,0 +1,11 @@
+.list-item
+  name:
+  = plan.name
+  %br
+  price:
+  = plan.price
+  %br
+  .actions
+    = link_to 'edit', edit_catagory_plan_path(@catagory, plan), class: 'edit-link', remote: true
+    = link_to 'delete', catagory_plan_path(@catagory, plan), class: 'delete-link', method: 'delete', remote: true
+  .edit
