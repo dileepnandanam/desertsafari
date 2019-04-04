@@ -6,7 +6,11 @@ class CatagoriesController < ApplicationController
 
   def index
     @catagories = Catagory.all
-    @settings = Setting.all
+    @settings = [
+      Setting.where(name: 'Site introduction', identifier: 'site_introduction').first_or_create,
+      Setting.where(name: 'Youtube embed code', identifier: 'youtube_embed_code').first_or_create,
+      Setting.where(name: 'Contact number', identifier: 'contact_number').first_or_create
+    ]
   end
 
   def new
@@ -21,13 +25,13 @@ class CatagoriesController < ApplicationController
 
   def create
     @catagory = Catagory.create catagory_params
-    render 'catagory', layout: false
+    redirect_to catagories_path
   end
 
   def update
     @catagory = Catagory.find(params[:id])
     @catagory.update catagory_params
-    render 'catagory', layout: false
+    redirect_to catagories_path
   end
 
   def destroy
@@ -35,9 +39,11 @@ class CatagoriesController < ApplicationController
     render body: nil, status: :ok
   end
 
+  layout 'admin'
+
   protected
 
   def catagory_params
-    params.require(:catagory).permit(:name, :description, :short_description, :price)
+    params.require(:catagory).permit(:name, :description, :short_description, :price, :image)
   end
 end

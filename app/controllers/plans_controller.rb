@@ -1,7 +1,7 @@
 class PlansController < ApplicationController
   before_action :find_catagory
   def index
-    @plans = Plan.all
+    @plans = @catagory.plans
   end
 
   def new
@@ -16,13 +16,13 @@ class PlansController < ApplicationController
 
   def create
     @plan = @catagory.plans.create plan_params
-    render 'plan', layout: false
+    redirect_to catagory_plans_path(@catagory)
   end
 
   def update
     @plan = Plan.find(params[:id])
-    @plan.update catagory_params
-    render 'plan', layout: false
+    @plan.update plan_params
+    redirect_to catagory_plans_path(@catagory)
   end
 
   def destroy
@@ -37,6 +37,8 @@ class PlansController < ApplicationController
   end
 
   def plan_params
-    params.require(:plan).permit(:name, :price)
+    params.require(:plan).permit(:name, :price, :image, :description)
   end
+
+  layout 'admin'
 end

@@ -3,7 +3,8 @@
   = link_to catagory.name, catagory_plans_path(catagory)
   %br
   description:
-  = catagory.description
+  %br
+  = catagory.description[1..200]
   %br
   .actions
     = link_to 'edit', edit_catagory_path(catagory), class: 'edit-link', remote: true

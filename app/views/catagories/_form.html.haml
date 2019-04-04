@@ -1,7 +1,8 @@
-= simple_form_for(@catagory, remote: true) do |f|
+= simple_form_for(@catagory) do |f|
   = f.input :name
   = f.input :description
   = f.input :short_description
   = f.input :price
+  = f.input :image
   = f.submit 'submit'
   = link_to 'cancel', '#', class: 'cancel-link', remote: true
