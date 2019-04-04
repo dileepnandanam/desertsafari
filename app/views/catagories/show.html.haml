@@ -1,4 +1,5 @@
 .page
+  %h3.white= @catagory.name
   .introduction
     = @catagory.description
 
@@ -16,4 +17,9 @@
               = p.description
             .call
               = link_to 'Call us', "tel:#{setting('contact_number')}", class: 'btn btn-primary'
+    .clearfix
+  .photos
+    - @catagory.photos.each do |p|
+      .photo-container.col-lg-4.col-md-6.col-12.pull-left
+        .thumbnail{   style: "background-image: url(#{image_path(p.image(:medium))})"   }
     .clearfix

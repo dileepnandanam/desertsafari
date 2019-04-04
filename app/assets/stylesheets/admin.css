@@ -22,3 +22,10 @@
 textarea {
 	height: 200px;
 }
+.photo.list-item {
+	width: fit-content;
+	margin: 12px;
+}
+.photo-form {
+	margin-bottom: 12px;
+}

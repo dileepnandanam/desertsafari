@@ -7,4 +7,19 @@
   .new
   = link_to 'new plan', new_catagory_plan_path, class: 'new-link', remote: true
   %br
+
+  %h3
+    Photos
+  .photo-form
+    = simple_form_for(Photo.new) do |f|
+      = f.hidden_field :catagory_id, value: @catagory.id
+      = f.input :image, label: 'Upload photo'
+      = f.submit 'upload'
+  .photos.list
+    - @photos.each do |p|
+      .photo.pull-left.list-item
+        = image_tag(p.image.url(:medium))
+        %br
+        = link_to 'delete', photo_path(p), method: :delete, remote: true, class: 'delete-link'
+    .clearfix
   = link_to 'back', catagories_path

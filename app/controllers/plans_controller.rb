@@ -3,6 +3,7 @@ class PlansController < ApplicationController
   before_action :find_catagory
   def index
     @plans = @catagory.plans
+    @photos = @catagory.photos
   end
 
   def new
