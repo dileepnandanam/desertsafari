@@ -1,7 +1,5 @@
 .list-item
-  name:
-  = link_to catagory.name, catagory_plans_path(catagory)
-  %br
+  %h4= link_to catagory.name, catagory_plans_path(catagory)
   description:
   %br
   = catagory.description[1..200]

@@ -1,4 +1,5 @@
 class PlansController < ApplicationController
+  before_action :access_controll
   before_action :find_catagory
   def index
     @plans = @catagory.plans

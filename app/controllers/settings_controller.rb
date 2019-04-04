@@ -1,4 +1,5 @@
 class SettingsController < ApplicationController
+  before_action :access_controll
   def edit
   	@setting = Setting.find(params[:id])
   	render 'edit', layout: false

@@ -1,4 +1,5 @@
 class CatagoriesController < ApplicationController
+  before_action :access_controll, except: [:show]
   def show
     @catagory = Catagory.find(params[:id])
     @plans = @catagory.plans
@@ -11,6 +12,7 @@ class CatagoriesController < ApplicationController
       Setting.where(name: 'Youtube embed code', identifier: 'youtube_embed_code').first_or_create,
       Setting.where(name: 'Contact number', identifier: 'contact_number').first_or_create
     ]
+    render 'index', layout: 'admin'
   end
 
   def new
@@ -38,8 +40,6 @@ class CatagoriesController < ApplicationController
     Catagory.find(params[:id]).destroy
     render body: nil, status: :ok
   end
-
-  layout 'admin'
 
   protected
 
