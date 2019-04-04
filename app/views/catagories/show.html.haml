@@ -1,0 +1,19 @@
+.page
+  .introduction
+    = @catagory.description
+
+  .items
+    - @plans.each do |p|
+      .item.col-lg-4.col-md-6.col-12.pull-left
+        .item-inner
+          .item-image{style: "background-image: url(#{p.image.url(:medium)})"}
+          .item-content
+            %h3.item-heading
+              = p.name
+            .price
+              = p.price
+            .short-description
+              = p.description
+            .call
+              = link_to 'Call us', "tel:#{setting('contact_number')}", class: 'btn btn-primary'
+    .clearfix

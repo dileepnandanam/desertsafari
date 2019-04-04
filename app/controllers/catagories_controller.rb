@@ -10,7 +10,8 @@ class CatagoriesController < ApplicationController
     @settings = [
       Setting.where(name: 'Site introduction', identifier: 'site_introduction').first_or_create,
       Setting.where(name: 'Youtube embed code', identifier: 'youtube_embed_code').first_or_create,
-      Setting.where(name: 'Contact number', identifier: 'contact_number').first_or_create
+      Setting.where(name: 'Contact number', identifier: 'contact_number').first_or_create,
+      Setting.where(name: 'Site name', identifier: 'site_name').first_or_create
     ]
     render 'index', layout: 'admin'
   end

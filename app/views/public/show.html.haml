@@ -1,0 +1,22 @@
+.page
+  .video-container.col-lg-6.col-md-9.col-10
+    .youtube-video
+      = raw setting('youtube_embed_code')
+  .introduction
+    = setting('site_introduction')
+
+  .items
+    - @catagories.each do |c|
+      .item.col-lg-4.col-md-6.col-12.pull-left
+        .item-inner
+          .item-image{style: "background-image: url(#{c.image.url(:medium)})"}
+          .item-content
+            %h3.item-heading
+              = c.name
+            .price
+              = c.price
+            .short-description
+              = c.short_description
+            .view-more
+              = link_to 'View plans', catagory_path(c), class: 'btn btn-primary'
+    .clearfix
