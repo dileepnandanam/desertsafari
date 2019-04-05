@@ -17,13 +17,6 @@
 @import "bootstrap";
 @import "font-awesome";
 
-@font-face {
-	font-family: 'helvetica';
-	src: font-url('helvetica.woff') format('woff');
-	src: font-url('helvetica-light.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
 div {
-	font-family: helvetica;
+	font-family: 'Roboto', sans-serif;
 }
