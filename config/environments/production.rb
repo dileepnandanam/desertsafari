@@ -11,7 +11,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
@@ -91,4 +91,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :bucket => 'desertsafari',
+    :s3_host_name => 's3-ap-southeast-1.amazonaws.com',
+    :s3_region => 'ap-southeast-1',
+    s3_credentials: {
+      access_key_id: 'AKIAIJITGHAYUW4G5EKQ',
+      secret_access_key: ENV['AWS_SECRET']
+    }
+  }
 end
