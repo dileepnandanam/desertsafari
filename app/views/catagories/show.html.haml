@@ -18,6 +18,11 @@
             .call
               = link_to 'Call us', "tel:#{setting('contact_number')}", class: 'btn btn-primary'
     .clearfix
+  - if @plans.length == 0
+    .call-us-container.col-lg-12.col-md-12.col-12
+      = link_to "tel:#{setting('contact_number')}" do
+        .call-us.col-lg-12.col-md-12.col-12
+          = "Call us #{setting('contact_number')}"
   .photos
     - @catagory.photos.each do |p|
       .photo-container.col-lg-4.col-md-6.col-12.pull-left
