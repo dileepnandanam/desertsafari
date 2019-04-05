@@ -35,7 +35,7 @@
 	padding: 4%;
 	background-color: #bd8565;
 	min-height: 244px;
-	background-image: url(dark.jpg);
+	background-image: url(#{image_path('dark.jpg')});
 	background-size: cover;
 }
 .youtube-video iframe {
