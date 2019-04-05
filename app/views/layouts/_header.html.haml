@@ -1,4 +1,4 @@
-.header{style: "background-image:url(#{image_path('header.jpg')})"}
+.header{style: "background-image:url(#{Image.first.file.url(:original)})"}
   .site-name
     %h1
       = setting('site_name')

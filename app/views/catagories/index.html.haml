@@ -10,5 +10,11 @@
   %h3
     Site Settings
   .list.site-settings
+    .list-item.setting
+      Site Header
+      %br
+      = image_tag Image.first.file.url(:medium)
+      .edit
+      = link_to 'Change', edit_image_path(Image.first), remote: true, class: 'edit-link'
     - @settings.each do |s|
       = render partial: 'settings/setting', locals: {setting: s}

@@ -1,0 +1,4 @@
+= simple_form_for @image do |f|
+  = f.input :file, label: false
+  = f.submit 'upload'
+  = link_to 'cancel', '#', class: 'cancel-link', remote: true
