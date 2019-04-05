@@ -19,7 +19,8 @@
 
 @font-face {
 	font-family: 'helvetica';
-	src: url(asset-path('fonts/helvetica.woff')) format('woff');
+	src: font-url('helvetica.woff') format('woff');
+	src: font-url('helvetica-light.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
