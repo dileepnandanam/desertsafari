@@ -3,7 +3,7 @@
     .youtube-video
       = raw setting('youtube_embed_code')
   .introduction
-    = setting('site_introduction')
+    = raw setting('site_introduction')
 
   .items
     - @catagories.each do |c|
