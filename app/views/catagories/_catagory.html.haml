@@ -1,9 +1,9 @@
 .list-item.col-lg-6.col-md-8.col-12
+  
   %h4= link_to catagory.name, catagory_plans_path(catagory)
-  description:
-  %br
-  = catagory.description[1..200]
-  %br
+  .price= catagory.price
+  .desc= catagory.short_description
+  .desc= catagory.description[1..200]
   .actions
     = link_to 'edit', edit_catagory_path(catagory), class: 'edit-link', remote: true
     = link_to 'delete', catagory_path(catagory), class: 'delete-link', method: 'delete', remote: true
