@@ -2,4 +2,5 @@
   .site-name
     %h1
       = setting('site_name')
-    = link_to "Call us " + setting('contact_number'), "tel:#{setting('contact_number')}"
+    = link_to "tel:#{setting('contact_number')}" do
+      .number= "Call us " + setting('contact_number')
