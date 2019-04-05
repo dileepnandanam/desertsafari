@@ -37,6 +37,7 @@
 	min-height: 244px;
 	background-image: url(#{image_path('dark.jpg')});
 	background-size: cover;
+	background-attachment: fixed;
 }
 .youtube-video iframe {
 	width: 100%;
@@ -132,4 +133,13 @@
 }
 .call-us-container a:hover {
 	text-decoration: none;
+}
+.map-link {
+	width: 100%;
+	cursor: pointer;
+}
+.map-ico {
+	width: 100px;
+    margin: auto;
+    display: block;
 }
