@@ -1,4 +1,5 @@
 class PhotosController < ApplicationController
+  before_action :access_controll
   def create
     Photo.create(params.require(:photo).permit(:image, :catagory_id))
     redirect_to request.referer

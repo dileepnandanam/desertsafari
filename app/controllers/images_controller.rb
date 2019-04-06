@@ -1,4 +1,5 @@
 class ImagesController < ApplicationController
+  before_action :access_controll
   def edit
   	@image = Image.find(params[:id])
   	render 'edit', layout: false
