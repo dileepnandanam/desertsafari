@@ -22,13 +22,13 @@
 textarea {
 	height: 200px;
 }
-.admin-photo.list-item {
+.admin-photo {
 	margin: 12px;
 }
 .photo-form {
 	margin-bottom: 12px;
 }
-.admin-photo img {
+.list-item img {
 	width: 100%;
 }
 .list-item .price {

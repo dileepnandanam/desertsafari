@@ -17,9 +17,10 @@
       = f.submit 'upload'
   .admin-photos.list
     - @photos.each do |p|
-      .admin-photo.pull-left.list-item.col-lg-4.col-md-6.col-12
-        = image_tag(p.image.url(:medium))
-        %br
-        = link_to 'delete', photo_path(p), method: :delete, remote: true, class: 'delete-link'
+      .list-item.col-lg-4.col-md-6.col-12.pull-left
+        .admin-photo
+          = image_tag(p.image.url(:medium))
+          %br
+          = link_to 'delete', photo_path(p), method: :delete, remote: true, class: 'delete-link'
     .clearfix
   = link_to 'back', catagories_path
