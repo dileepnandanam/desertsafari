@@ -7,7 +7,6 @@
 
 .list-item {
 	padding: 20px;
-	width:50%;
 	margin-bottom: 12px;
 	border-radius: 8px;
 	background-color: white;
@@ -21,9 +20,6 @@
 }
 textarea {
 	height: 200px;
-}
-.admin-photo {
-	margin: 12px;
 }
 .photo-form {
 	margin-bottom: 12px;
