@@ -26,5 +26,5 @@
   .photos
     - @catagory.photos.each do |p|
       .photo-container.col-lg-4.col-md-6.col-12.pull-left
-        .thumbnail{   style: "background-image: url(#{image_path(p.image(:medium))})"   }
+        .thumbnail{   style: "background-image: url(#{p.image.url(:medium)})"   }
     .clearfix
