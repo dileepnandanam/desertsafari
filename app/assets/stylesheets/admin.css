@@ -11,6 +11,7 @@
 	border-radius: 8px;
 	background-color: white;
 	box-shadow: 5px 10px 8px #1b2f48;
+	word-break: break-word;
 }
 .actions a {
 	padding-right: 16px; 
