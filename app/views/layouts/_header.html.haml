@@ -1,6 +1,5 @@
-.header{style: "background-image:url(#{Image.first.file.url(:original)})"}
-  .site-name
-    %h1
-      = setting('site_name')
-    = link_to "tel:#{setting('contact_number')}" do
-      .number= "Call us " + setting('contact_number')
+.site-name
+  %h1
+    = setting('site_name')
+  = link_to "tel:#{setting('contact_number')}" do
+    .number= "Call us " + setting('contact_number')
